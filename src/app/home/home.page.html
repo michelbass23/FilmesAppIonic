@@ -1,0 +1,84 @@
+<ion-content>
+    <div class="header">
+        <ion-grid>
+            <ion-row class="ion-text-left ion-align-items-center">
+              <ion-col size="2">
+                <img src="../../assets/logo.png">
+              </ion-col>
+              <ion-col size="10">
+                <ion-row>
+                  <ion-col size="4">
+                      <a class="links">Séries</a>
+                  </ion-col>
+                     <ion-col size="4">
+                   <a class="links">Filmes</a> 
+                  </ion-col>
+                  <ion-col size="4">
+                    <a class="links">Minha lista</a>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+      
+    </div>
+
+    <div class="main">
+      
+
+          </div>
+
+      
+
+
+       <ion-searchbar  color="light" animated="true" placeholder="Pesquisar"></ion-searchbar>
+    <div class="content ion-padding">
+          <div class="title ion-margin-vertical">
+            <span>Continue Assintindo</span>
+          </div>
+
+         
+          <swiper-container class="stories" slides-per-view="3" speed="200" style="padding: 2px;">
+            <swiper-slide lazy="true"  *ngFor="let story of stories" style="padding: 5px;">
+                <img style="height:120px;width:120px;" loading="lazy" [src]="story.Poster">
+            </swiper-slide>
+          </swiper-container>
+
+          <div class="title ion-margin-vertical">
+            <span>Lançamentos</span>
+          </div>
+         
+          <swiper-container class="stories"
+           slides-per-view="3" speed="200" style="padding: 2px;">
+            <swiper-slide lazy="true"  *ngFor="let new of news"
+             style="padding: 5px;">
+                <img style="height:120px;width:120px;" 
+                loading="lazy" [src]="new.Poster">
+            </swiper-slide>
+          </swiper-container>
+
+          <div class="title ion-margin-vertical">
+            <span>Minha Lista</span>
+          </div>
+          <swiper-container class="stories" slides-per-view="3" speed="200" style="padding: 2px;">
+            <swiper-slide lazy="true"  *ngFor="let movie of movies" style="margin: 5px;padding: 5px;">
+              <img style="height:120px;width:120px;" loading="lazy" [src]="movie.Poster">
+          </swiper-slide>
+          </swiper-container>
+
+
+          <div class="title ion-margin-vertical">
+            <span>Séries</span>
+          </div>
+            <swiper-container class="stories" slides-per-view="3" speed="200" style="padding: 2px;">
+                <swiper-slide lazy="true" *ngFor="let serie of series" style="margin:5px;padding:5px;" >
+                  <img style="height:120px;width:120px;" loading="lazy" [src]="serie.Poster">
+                </swiper-slide>
+            </swiper-container>
+<ion-footer fullscreen="true">
+    <br>
+  <ion-button (click)="exit()"  expand="block">Sair</ion-button>
+  
+</ion-footer>
+    </div>
+</ion-content>
